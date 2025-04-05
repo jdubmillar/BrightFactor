@@ -24,25 +24,62 @@
         .container {
             width: 80%;
             margin: 20px auto;
+            padding-bottom: 40px; /* Added padding to give space above footer */
         }
         h1 {
-            color: #004b8d;
+            color: #004b8d; /* Changed heading color for better visibility on white bg */
+            margin-top: 0.5em; /* Adjusted margin */
+        }
+        header h1 { /* Keep header H1 white */
+             color: white;
         }
         .section {
             padding: 20px;
             margin: 20px 0;
             border-radius: 8px;
             background-color: #f4f4f4;
+            text-align: left; /* Align text inside sections left */
         }
         footer {
             background-color: #004b8d;
             color: white;
             padding: 10px 0;
+            margin-top: 30px; /* Ensure space above footer */
         }
-        a {
+        a { /* Default link style */
             color: #ff8c00;
             text-decoration: none;
         }
+        a:hover {
+            text-decoration: underline; /* Add underline on hover for default links */
+        }
+
+        /* --- New Styles for Contact Button --- */
+        .contact-button-container {
+            margin-top: 30px; /* Space above the button container */
+            text-align: center; /* Center the button */
+        }
+
+        .contact-button {
+            display: inline-block; /* Allow padding and margin */
+            background-color: #ff8c00; /* Use accent color */
+            color: white; /* Text color */
+            padding: 12px 25px; /* Button size */
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+            font-size: 1.1em; /* Font size */
+            font-weight: bold;
+            text-decoration: none; /* Remove underline */
+            cursor: pointer; /* Indicate it's clickable */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+
+        .contact-button:hover {
+            background-color: #e67e00; /* Darken button on hover */
+            text-decoration: none; /* Ensure no underline on hover */
+        }
+         /* --- End New Styles --- */
+
     </style>
 </head>
 <body>
@@ -64,14 +101,16 @@
         </div>
         
         <div class="section">
-            <h2>Contact</h2>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/jeremymillar" target="_blank">linkedin.com/in/jeremymillar</a></p>
+            <h2>Contact Information</h2> <p>Connect with Jeremy on LinkedIn: <a href="https://www.linkedin.com/in/jeremymillar" target="_blank">linkedin.com/in/jeremymillar</a></p>
+             <p>For inquiries, please use the contact form:</p> </div>
+
+        <div class="contact-button-container">
+            <a href="contact.html" class="contact-button">Contact Me</a>
         </div>
-    </div>
+        </div> 
     
     <footer>
-        <p>&copy; 2025 Bright Factor Inc. All rights reserved.</p>
+        <p>&copy; 2025 Bright Factor Inc. All rights reserved.</p> 
     </footer>
 </body>
 </html>
-

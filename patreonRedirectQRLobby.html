@@ -4,41 +4,42 @@
   <meta charset="UTF-8">
   <title>Redirecting...</title>
 
-  <!-- Google Analytics (GA4) tracking -->
+  <!-- GA4 Tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B213QMYT71"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    // Extract UTM parameters from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const source = urlParams.get('utm_source');
     const medium = urlParams.get('utm_medium');
     const campaign = urlParams.get('utm_campaign');
     const content = urlParams.get('utm_content');
 
-    // Pass UTM parameters explicitly to GA4
+    // Pass UTM to GA
     gtag('config', 'G-B213QMYT71', {
       campaign_source: source,
       campaign_medium: medium,
       campaign_name: campaign,
       campaign_content: content
     });
-  </script>
 
-  <!-- Meta refresh fallback redirect -->
-  <meta http-equiv="refresh" content="3; url=https://www.patreon.com/c/magentahealth/membership">
+    // Fire an interaction event to qualify as an engaged session
+    gtag('event', 'qr_pageview', {
+      event_category: 'QR Redirect',
+      event_label: window.location.search,
+    });
+
+    // Redirect after 4 seconds
+    setTimeout(function () {
+      window.location.href = "https://www.patreon.com/c/magentahealth/membership";
+    }, 4000);
+  </script>
 </head>
 <body>
   <p>Redirecting you to Patreon... If you're not redirected, <a href="https://www.patreon.com/c/magentahealth/membership">click here</a>.</p>
-
-  <!-- JavaScript redirect after 3 seconds -->
-  <script>
-    setTimeout(function () {
-      window.location.href = "https://www.patreon.com/c/magentahealth/membership";
-    }, 3000);
-  </script>
 </body>
 </html>
+
 

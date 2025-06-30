@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+
+  <!-- Google Analytics (GA4) tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B213QMYT71"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // Replace G-XXXXXXXXXX with your actual GA4 Measurement ID
+    gtag('config', 'G-B213QMYT71');
+  </script>
+
+  <!-- Meta refresh fallback redirect -->
+  <meta http-equiv="refresh" content="3; url=https://www.patreon.com/JDubMillar">
+</head>
+<body>
+  <p>Redirecting you to Patreon... If you're not redirected, <a href="https://www.patreon.com/yourpatreonname">click here</a>.</p>
+
+  <!-- Optional: JavaScript redirect -->
+  <script>
+    setTimeout(function () {
+      window.location.href = "https://www.patreon.com/JDubMillar";
+    }, 3000);
+  </script>
+</body>
+</html>

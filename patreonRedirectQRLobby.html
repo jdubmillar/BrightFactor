@@ -11,8 +11,20 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    // Replace G-XXXXXXXXXX with your actual GA4 Measurement ID
-    gtag('config', 'G-B213QMYT71');
+    // Extract UTM parameters from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const source = urlParams.get('utm_source');
+    const medium = urlParams.get('utm_medium');
+    const campaign = urlParams.get('utm_campaign');
+    const content = urlParams.get('utm_content');
+
+    // Pass UTM parameters explicitly to GA4
+    gtag('config', 'G-B213QMYT71', {
+      campaign_source: source,
+      campaign_medium: medium,
+      campaign_name: campaign,
+      campaign_content: content
+    });
   </script>
 
   <!-- Meta refresh fallback redirect -->
@@ -21,7 +33,7 @@
 <body>
   <p>Redirecting you to Patreon... If you're not redirected, <a href="https://www.patreon.com/c/magentahealth/membership">click here</a>.</p>
 
-  <!-- Optional: JavaScript redirect -->
+  <!-- JavaScript redirect after 3 seconds -->
   <script>
     setTimeout(function () {
       window.location.href = "https://www.patreon.com/c/magentahealth/membership";
@@ -29,3 +41,4 @@
   </script>
 </body>
 </html>
+

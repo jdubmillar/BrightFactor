@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting to Patreon...</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    // Replace with your GA4 Measurement ID
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hold tight!</h1>
+    <p>We’re sending you to our Patreon page...</p>
+  </div>
+
+  <script>
+    // Delay to allow GA event to fire (adjust if needed)
+    setTimeout(function () {
+      const base = "https://www.patreon.com/brightfactor";
+      const query = window.location.search;
+      window.location.href = base + query;
+    }, 800);
+  </script>
+</body>
+</html>
